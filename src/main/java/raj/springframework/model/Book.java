@@ -1,4 +1,4 @@
-package raj.springframework.spring5webapp.model;
+package raj.springframework.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -12,7 +12,7 @@ public class Book {
     private Integer id;
     private String title;
     private String isbn;
-    
+
     @OneToOne
     private Publisher publisher;
 

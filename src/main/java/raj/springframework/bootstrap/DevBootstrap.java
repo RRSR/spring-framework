@@ -1,14 +1,14 @@
-package raj.springframework.spring5webapp.bootstrap;
+package raj.springframework.bootstrap;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import raj.springframework.spring5webapp.model.Author;
-import raj.springframework.spring5webapp.model.Book;
-import raj.springframework.spring5webapp.model.Publisher;
-import raj.springframework.spring5webapp.repositories.AuthorRepository;
-import raj.springframework.spring5webapp.repositories.BookRepository;
-import raj.springframework.spring5webapp.repositories.PublisherRepository;
+import raj.springframework.model.Book;
+import raj.springframework.model.Publisher;
+import raj.springframework.repositories.AuthorRepository;
+import raj.springframework.repositories.BookRepository;
+import raj.springframework.repositories.PublisherRepository;
+import raj.springframework.model.Author;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> {
