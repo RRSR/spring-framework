@@ -3,3 +3,9 @@ raj:
     username: JMS Raj
     password: JMS-RRSR
     url: www.rrsr.jms.com
+---
+spring:
+  profiles: de
+raj:
+  jms:
+    username: JMR Raj *******IN GREMAN*******
