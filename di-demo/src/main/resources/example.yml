@@ -1,0 +1,34 @@
+#this is  yaml comment.
+
+name: Raj
+
+names: #this is a list of name of one person
+  -Raj
+  -Rajeshwar
+  -Singh
+  -Rathore
+
+book:
+  author: the great author raj
+  publisher: the lengdery publishing house
+
+truth: yes #True , true, YES
+
+lie: no #False , false, NO
+
+string_value: "I'll type a string"
+
+colon_string: "Just a string with : colon."
+
+includes_new_lines: |
+  wkjvwk vw vw v
+  w fwe vwe we
+  w r r2 eqw e123
+  we fe f23 r23
+
+ignore_new_lines: >
+  WFW
+  fwwf
+  wff we fw fwe f
+  f wef2 f23 r f2 f2
+  we f2e f23 f2 f
