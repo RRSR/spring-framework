@@ -11,11 +11,7 @@ import raj.spring.didemo.examplebeans.FakeDataSource;
 import raj.spring.didemo.examplebeans.FakeJmsBroker;
 
 @Configuration
-@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
 public class PropertyConfig {
-
-  @Autowired
-  Environment env;
 
   @Value("${raj.username}")
   String username;
@@ -39,7 +35,7 @@ public class PropertyConfig {
   @Bean
   public FakeDataSource fakeDataSource() {
     FakeDataSource fakeDataSource = new FakeDataSource();
-    fakeDataSource.setUsername(env.getProperty("raj.username"));
+    fakeDataSource.setUsername(username);
     fakeDataSource.setPassword(password);
     fakeDataSource.setUrl(url);
     return fakeDataSource;
@@ -49,14 +45,9 @@ public class PropertyConfig {
   public FakeJmsBroker fakeJmsBroker(){
     FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
     fakeJmsBroker.setUsername(jmsUsername);
-    fakeJmsBroker.setPassword(password);
+    fakeJmsBroker.setPassword(jmsPassword);
     fakeJmsBroker.setUrl(jmsUrl);
     return fakeJmsBroker;
-  }
-
-  @Bean
-  public static PropertySourcesPlaceholderConfigurer properties() {
-    return new PropertySourcesPlaceholderConfigurer();
   }
 
 }
