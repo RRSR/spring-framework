@@ -1,10 +1,10 @@
 package raj.spring.didemo.controller;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 import raj.spring.didemo.services.GreetingServiceImpl;
-
-import static org.junit.Assert.assertEquals;
 
 public class ConstructorInjectedControllerTest {
 
