@@ -1,10 +1,13 @@
 package raj.springframework.recipe.domain;
 
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
 /**
  * Created by Raj Rathore on 08-Oct-17
@@ -26,6 +29,9 @@ public class Recipe {
 
   @Lob
   private Byte[] image;
+
+  @OneToMany(cascade = CascadeType.ALL,mappedBy = "recipe")
+  private Set<Ingredient> ingredients;
 
   public long getId() {
     return id;
@@ -97,5 +103,13 @@ public class Recipe {
 
   public void setImage(Byte[] image) {
     this.image = image;
+  }
+
+  public Set<Ingredient> getIngredients() {
+    return ingredients;
+  }
+
+  public void setIngredients(Set<Ingredient> ingredients) {
+    this.ingredients = ingredients;
   }
 }
