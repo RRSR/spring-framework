@@ -1,12 +1,13 @@
 package raj.springframework.recipe.domain;
 
-import java.awt.geom.PathIterator;
 import java.math.BigDecimal;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * Created by Raj Rathore on 09-Oct-17
@@ -22,6 +23,9 @@ public class Ingredient {
 
   @ManyToOne
   private Recipe recipe;
+
+  @OneToOne(fetch = FetchType.EAGER)
+  private UnitOfMeasure unitOfMeasure;
 
   public long getId() {
     return id;
@@ -53,5 +57,13 @@ public class Ingredient {
 
   public void setRecipe(Recipe recipe) {
     this.recipe = recipe;
+  }
+
+  public UnitOfMeasure getUnitOfMeasure() {
+    return unitOfMeasure;
+  }
+
+  public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+    this.unitOfMeasure = unitOfMeasure;
   }
 }
