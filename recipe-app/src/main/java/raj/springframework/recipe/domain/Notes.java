@@ -27,8 +27,7 @@ public class Notes {
   public Notes() {
   }
 
-  public Notes(Recipe recipe, String recipeNotes) {
-    this.recipe = recipe;
+  public Notes(String recipeNotes) {
     this.recipeNotes = recipeNotes;
   }
 

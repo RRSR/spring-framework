@@ -52,9 +52,9 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     recipe.setImage(null);
     recipe.setDifficulty(Difficulty.KIND_OF_HARD);
 
-    recipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal("2"),recipe,unitOfMeasureRepository.findByDescription("Number").get()));
-    recipe.getIngredients().add(new Ingredient("fresh lime juice or lemon juice", new BigDecimal("1"),recipe,unitOfMeasureRepository.findByDescription("Tablespoon").get()));
-    recipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal("0.5"),recipe,unitOfMeasureRepository.findByDescription("Teaspoon").get()));
+    recipe.addIngredients(new Ingredient("ripe avocados", new BigDecimal("2"),unitOfMeasureRepository.findByDescription("Number").get()));
+    recipe.getIngredients().add(new Ingredient("fresh lime juice or lemon juice", new BigDecimal("1"),unitOfMeasureRepository.findByDescription("Tablespoon").get()));
+    recipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal("0.5"),unitOfMeasureRepository.findByDescription("Teaspoon").get()));
 
     recipe.getCategories().add(categoryRepository.findByDescription("American").get());
     recipe.getCategories().add(categoryRepository.findByDescription("Italian").get());
@@ -63,7 +63,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         + "Feel free to experiment! One classic Mexican guacamole has pomegranate seeds and chunks of peaches in it (a Diana Kennedy favorite). Try guacamole with added pineapple, mango, or strawberries.\n"
         + "The simplest version of guacamole is just mashed avocados with salt. Don't let the lack of availability of other ingredients stop you from making guacamole.\n"
         + "To extend a limited supply of avocados, add either sour cream or cottage cheese to your guacamole dip. Purists may be horrified, but so what? It tastes great.";
-    recipe.setNotes(new Notes(recipe,recipeNotes));
+    recipe.setNotes(new Notes(recipeNotes));
 
     recipeRepository.save(recipe);
 
