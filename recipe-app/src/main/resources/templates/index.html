@@ -7,4 +7,36 @@
 <body>
 <h1>Recipe</h1>
 </body>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Preparation Time</th>
+    <th>Cook Time</th>
+    <th>Servings</th>
+    <th>Source</th>
+    <th>URL</th>
+    <th>Directions</th>
+    <th>Image</th>
+    <th>Difficulty</th>
+    <!--<th>Ingredients</th>
+    <th>Categories</th>-->
+
+  </tr>
+  <tr th:each="recipe : ${recipes}">
+    <td th:text="${recipe.id}">1</td>
+    <td th:text="${recipe.description}">Demo Recipe</td>
+    <td th:text="${recipe.prepTime}">10</td>
+    <td th:text="${recipe.cookTime}">20</td>
+    <td th:text="${recipe.servings}">20</td>
+    <td th:text="${recipe.source}">20</td>
+    <td th:text="${recipe.url}">20</td>
+    <td th:text="${recipe.directions}">20</td>
+    <td th:text="${recipe.image}">20</td>
+    <td th:text="${recipe.difficulty}">20</td>
+    <!--Uncomment by iterating the ingredients and categories as they are lists.-->
+    <!--<td th:text="${recipe.ingredients}">20</td>
+    <td th:text="${recipe.categories}">20</td>-->
+  </tr>
+</table>
 </html>
